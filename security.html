@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENTRAX - Sécurité</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .security-container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .security-card { background: #1a1a1a; padding: 25px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #00ff88; }
+        .cve-item { background: #0a0a0a; padding: 15px; margin: 10px 0; border-radius: 8px; }
+        .cve-critical { border-left: 4px solid #ff0000; }
+        .cve-high { border-left: 4px solid #ff6600; }
+        .btn-back { display: inline-block; background: #00ff88; color: #000; padding: 10px 25px; text-decoration: none; border-radius: 5px; margin: 20px 0; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; background: #0a0a0a; color: #00ff88; border: 1px solid #00ff88; border-radius: 5px; font-family: monospace; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #ffffff; }
+        .submit-btn { background: #00ff88; color: #000; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 1rem; }
+        .submit-btn:hover { background: #00cc66; transform: scale(1.02); }
+        .note { font-size: 0.8rem; color: #888; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><span class="logo-icon">🛡️</span><span class="logo-text">SENTRAX</span></div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="features.html">Fonctionnalités</a></li>
+                <li><a href="docs.html">Documentation</a></li>
+                <li><a href="security.html" class="active">Sécurité</a></li>
+                <li><a href="https://github.com/Ndaye12/SentraX">GitHub</a></li>
+            </ul>
+            <div class="lang-switch"><a href="security.html" class="lang-active">FR</a> | <a href="security_en.html">EN</a></div>
+        </div>
+    </nav>
+
+    <div class="security-container">
+        <a href="index.html" class="btn-back">← Retour à l'accueil</a>
+        
+        <h1>🛡️ POLITIQUE DE SÉCURITÉ</h1>
+        
+        <div class="security-card">
+            <h2>🔐 Authentification</h2>
+            <p>L'API REST utilise JWT (JSON Web Tokens) avec expiration après 8 heures. Support 2FA optionnel (TOTP).</p>
+        </div>
+        
+        <div class="security-card">
+            <h2>⚠️ Rate Limiting</h2>
+            <p>Limitation à 50 requêtes par heure et 200 par jour pour prévenir les abus.</p>
+        </div>
+        
+        <div class="security-card">
+            <h2>📜 Logs d'accès</h2>
+            <p>Toutes les actions sont enregistrées dans <code>logs/api.log</code>.</p>
+        </div>
+        
+        <div class="security-card">
+            <h2>🛡️ Vulnérabilités couvertes (CVE)</h2>
+            <div class="cve-item cve-critical">
+                <strong>CVE-2017-0144</strong> - EternalBlue (SMB) - CRITICAL
+            </div>
+            <div class="cve-item cve-critical">
+                <strong>CVE-2019-0708</strong> - BlueKeep (RDP) - CRITICAL
+            </div>
+            <div class="cve-item cve-high">
+                <strong>CVE-2014-0160</strong> - Heartbleed (OpenSSL) - HIGH
+            </div>
+            <div class="cve-item cve-critical">
+                <strong>CVE-2020-0796</strong> - SMBGhost - CRITICAL
+            </div>
+            <div class="cve-item cve-high">
+                <strong>CVE-2021-41773</strong> - Apache Path Traversal - HIGH
+            </div>
+        </div>
+        
+        <div class="security-card">
+            <h2>📝 Signaler une vulnérabilité</h2>
+            <p>Utilisez le formulaire ci-dessous. Je vous répondrai dans les 48 heures.</p>
+            
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="04547a57-6822-455d-a065-02605c6b858a">
+                <input type="hidden" name="subject" value="[SENTRAX] Signalement de vulnérabilité">
+                <input type="hidden" name="from_name" value="SENTRAX Security Form">
+                
+                <div class="form-group">
+                    <label>Votre email :</label>
+                    <input type="email" name="email" required placeholder="votre@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label>Titre / Type :</label>
+                    <input type="text" name="title" placeholder="Ex: CVE-XXXX, Faille XSS, RCE...">
+                </div>
+                
+                <div class="form-group">
+                    <label>Description détaillée :</label>
+                    <textarea name="message" rows="6" required placeholder="Décrivez la vulnérabilité, les versions concernées, et les étapes pour reproduire..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Preuve (optionnel) :</label>
+                    <input type="text" name="proof" placeholder="Lien vers capture d'écran, POC, ou code">
+                </div>
+                
+                <input type="checkbox" name="botcheck" style="display: none;">
+                
+                <button type="submit" class="submit-btn">🚀 Envoyer le signalement</button>
+                <p class="note">✅ Vos informations sont confidentielles. Je vous répondrai sous 48h.</p>
+            </form>
+        </div>
+        
+        <div class="security-card">
+            <h2>🔒 Bonnes pratiques recommandées</h2>
+            <ul>
+                <li>Changez le mot de passe par défaut (`admin123`)</li>
+                <li>Utilisez HTTPS en production</li>
+                <li>Activez le 2FA pour les comptes sensibles</li>
+                <li>Limitez les IPs autorisées</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-bottom"><p>© 2026 Patrick Ndaye - SENTRAX</p></div>
+    </footer>
+</body>
+</html>
