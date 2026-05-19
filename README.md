@@ -6,7 +6,7 @@
 [![Version](https://img.shields.io/badge/version-3.1.0-green)]()
 [![License](https://img.shields.io/badge/license-MIT-blue)]()
 
-![SENTRAX Dashboard](assets/banner.png)
+![SENTRAX Dashboard](banner.png)
 *Dashboard web de SENTRAX*
 
 ---
