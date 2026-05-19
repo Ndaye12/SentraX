@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Sitemap: https://ndaye12.github.io/SentraX/sitemap.xml
+
+# Pages importantes
+Allow: /index.html
+Allow: /features.html
+Allow: /docs.html
+Allow: /security.html
+Allow: /index_en.html
+
+# Ressources
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Délai d'exploration
+Crawl-delay: 1
