@@ -17,6 +17,7 @@
                 <span class="logo-icon">🛡️</span>
                 <span class="logo-text">SENTRAX</span>
             </div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
             <ul class="nav-menu">
                 <li><a href="index.html" class="active">Accueil</a></li>
                 <li><a href="features.html">Fonctionnalités</a></li>
@@ -33,7 +34,7 @@
     <header class="hero">
         <div class="hero-content">
             <h1>🛡️ SENTRAX</h1>
-            <p class="hero-subtitle">Suite de cybersécurité nouvelle génération</p>
+            <p class="hero-subtitle">10 scanners • API REST • Dashboard • Open Source</p>
             <div class="hero-badges">
                 <span class="badge">🔓 Open Source</span>
                 <span class="badge">🐍 Python 3.11+</span>
@@ -261,6 +262,13 @@
     </div>
 
     <script>
+        // Menu hamburger
+        function toggleMenu() {
+            const menu = document.querySelector('.nav-menu');
+            menu.classList.toggle('active');
+        }
+
+        // Animations au scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {

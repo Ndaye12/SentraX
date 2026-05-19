@@ -77,6 +77,19 @@ nav {
     color: transparent;
 }
 
+/* Menu hamburger */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 1px solid #00ff88;
+    color: #00ff88;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 4px 12px;
+    border-radius: 6px;
+    line-height: 1;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -466,7 +479,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* ==================== RESPONSIVE MOBILE ==================== */
+/* ==================== RESPONSIVE MOBILE AVEC HAMBURGER ==================== */
 @media (max-width: 768px) {
     body {
         font-size: 1rem;
@@ -481,10 +494,22 @@ footer {
         gap: 12px;
     }
 
+    .menu-toggle {
+        display: block;
+        align-self: flex-end;
+    }
+
     .nav-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
         gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .nav-menu.active {
+        display: flex;
     }
 
     .nav-menu a {
@@ -493,6 +518,7 @@ footer {
 
     .logo {
         font-size: 1.2rem;
+        align-self: flex-start;
     }
 
     .hero {
