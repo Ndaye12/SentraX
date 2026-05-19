@@ -92,14 +92,13 @@ Journalisation complète
 📖 Documentation complète
 https://ndaye12.github.io/SentraX/docs.html
 
-👤 Auteur
-Patrick Ndaye
+## 👤 Auteur
 
-LinkedIn : @patrick-ndaye-b5b67a399
+**Patrick Ndaye**  
 
-GitHub : @Ndaye12
-
-WhatsApp : Contact
+- **LinkedIn** : [patrick-ndaye-b5b67a399](https://www.linkedin.com/in/patrick-ndaye-b5b67a399)  
+- **GitHub** : [Ndaye12](https://github.com/Ndaye12)  
+- **WhatsApp** : [Me contacter](https://wa.me/243975659129?text=Bonjour%20Patrick%2C%20je%20suis%20intéressé%20par%20SENTRAX)
 
 📜 Licence
 MIT License – voir le fichier LICENSE.
