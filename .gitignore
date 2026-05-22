@@ -1,0 +1,127 @@
+# ============================================================
+# SENTRAX - .gitignore
+# Version 3.1.0
+# ============================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+*.exe
+*.exe.mui
+*.msi
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Configuration utilisateur
+data/.SENTRAX/
+api_keys.json
+.sentrax/
+sentrax.db
+
+# Environment variables
+.env
+.env.local
+.env.production
+.secrets
+.secrets.baseline
+secrets.json
+
+# Memory dumps
+*.dump
+*.mem
+*.core
+*.dmp
+
+# Base de données (SQLite)
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# Tests
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+*.cover
+.hypothesis/
+pytestdebug.log
+
+# Web
+web/__pycache__/
+web/templates/__pycache__/
+web/static/__pycache__/
+
+# Build / Package
+*.whl
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Certificates (sécurité)
+*.pem
+*.crt
+*.key
+*.p12

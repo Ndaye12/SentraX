@@ -1,0 +1,39 @@
+# POLITIQUE DE CONFIDENTIALITE - SENTRAX
+# Version 3.1.0 - 2026
+
+## 1. Donnees collectees
+SENTRAX ne collecte AUCUNE donnee personnelle.
+Aucune information n'est envoyee sur Internet.
+Aucun serveur externe n'enregistre vos activites.
+
+## 2. Donnees locales
+Le logiciel stocke uniquement :
+- Un fichier de validation d'acceptation des conditions
+- L'historique des scans (scan_history.db) - UNIQUEMENT si vous utilisez le Time Machine Scanner
+
+Ces fichiers restent sur votre machine.
+
+## 3. APIs externes (optionnel)
+Si vous configurez des cles API (Shodan, Censys) :
+- Les requetes sont envoyees directement a ces services
+- Aucune donnee ne transite par nos serveurs
+
+## 4. Aucun suivi
+- Pas de cookies
+- Pas de statistiques
+- Pas de telemetrie
+- Pas de collecte d'usage
+
+## 5. Vos droits
+Vous pouvez a tout moment :
+- Supprimer les fichiers de configuration dans %USERPROFILE%\.sentrax\
+- Supprimer l'historique des scans (fichier scan_history.db)
+
+## 6. Contact
+Pour toute question : patrickndaye919@gmail.com
+
+---
+
+🌐 Site officiel : https://ndaye12.github.io/SentraX/
+
+© 2026 Patrick Ndaye - SENTRAX

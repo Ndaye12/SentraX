@@ -1,0 +1,51 @@
+======================================================================
+                         SENTRAX - LICENSE & USAGE
+                         Version 3.1.0 - 2026
+======================================================================
+
+✅ UTILISATION AUTORISEE :
+
+1. Tests de penetration autorises (avec contrat ecrit)
+2. Audits de securite interne de votre propre infrastructure
+3. Formation et education en cybersecurite
+4. Detection des vulnerabilites sur vos propres serveurs
+5. Analyse de votre reseau local personnel ou professionnel
+6. Tests sur scanme.nmap.org et autres cibles explicitement autorisees
+
+======================================================================
+
+❌ UTILISATION INTERDITE :
+
+1. Scanner des systemes sans autorisation ecrite prealable
+2. Utilisation pour du piratage, de l'extorsion ou des activites malveillantes
+3. Attaques par deni de service (DoS/DDoS)
+4. Exploitation des vulnerabilites trouvees sans permission
+5. Utilisation contre des infrastructures critiques (sante, nucleaire, defense)
+
+======================================================================
+
+⚠️ RESPONSABILITE :
+
+SENTRAX est un outil professionnel de cybersecurite.
+L'utilisateur est SEUL RESPONSABLE de l'usage qu'il en fait.
+
+L'auteur decline toute responsabilite en cas d'utilisation:
+- Non conforme a la legislation en vigueur
+- Sans autorisation prealable
+- A des fins malveillantes
+
+======================================================================
+
+📋 RECOMMANDATIONS :
+
+Pour une utilisation professionnelle legale:
+1. Obtenez une autorisation ecrite du proprietaire du systeme
+2. Limitez le scan aux plages horaires convenues
+3. Documentez toutes vos actions
+4. Ne partagez pas les vulnerabilites trouvees sans autorisation
+5. Utilisez scanme.nmap.org pour vos tests de formation
+
+======================================================================
+                         © SENTRAX - Professionnel & Certifie
+                         https://ndaye12.github.io/SentraX/
+======================================================================

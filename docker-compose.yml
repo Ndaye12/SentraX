@@ -1,0 +1,54 @@
+# SENTRAX - Docker Compose
+version: '3.8'
+
+services:
+  sentrax-api:
+    build: .
+    container_name: sentrax-api
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+      - SECRET_KEY=${SECRET_KEY:-sentrax-secret-key-change-in-production}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-Admin123!}
+      - JWT_EXPIRATION_HOURS=8
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      - postgres
+    networks:
+      - sentrax-network
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: sentrax-db
+    environment:
+      - POSTGRES_DB=sentrax
+      - POSTGRES_USER=sentrax
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-SentraxDB2024!}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sentrax"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - sentrax-network
+
+volumes:
+  postgres_data:
+
+networks:
+  sentrax-network:
+    driver: bridge
