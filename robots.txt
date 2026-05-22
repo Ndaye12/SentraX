@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /backup/
 Crawl-delay: 1
 
 Sitemap: https://ndaye12.github.io/SentraX/sitemap.xml
