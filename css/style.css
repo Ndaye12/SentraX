@@ -7,6 +7,7 @@
 /* BASE POUR MOBILE - Viewport friendly */
 html {
     font-size: 18px;
+    scroll-behavior: smooth;
 }
 
 @media (max-width: 768px) {
@@ -28,6 +29,7 @@ body {
     color: #00ff88;
     line-height: 1.6;
     font-size: 1rem;
+    min-height: 100vh;
 }
 
 /* Monospace uniquement pour le code */
@@ -88,6 +90,12 @@ nav {
     padding: 4px 12px;
     border-radius: 6px;
     line-height: 1;
+    transition: all 0.3s;
+}
+
+.menu-toggle:hover {
+    background: #00ff88;
+    color: #000;
 }
 
 .nav-menu {
@@ -113,6 +121,11 @@ nav {
     color: #00ff88;
     text-decoration: none;
     font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.lang-switch a:hover {
+    color: #ffffff;
 }
 
 .lang-active {
@@ -153,6 +166,13 @@ nav {
     border-radius: 20px;
     font-size: 0.75rem;
     border: 1px solid #00ff88;
+    transition: all 0.3s;
+}
+
+.badge:hover {
+    background: #00ff88;
+    color: #000;
+    transform: translateY(-2px);
 }
 
 .download-btn {
@@ -238,6 +258,7 @@ p, li, label, input, textarea {
     text-align: center;
     transition: all 0.3s;
     border: 1px solid #2a2a2a;
+    cursor: pointer;
 }
 
 .scanner-card:hover {
@@ -274,6 +295,12 @@ p, li, label, input, textarea {
     background: #1a1a1a;
     border-radius: 10px;
     border: 1px solid #2a2a2a;
+    transition: all 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    border-color: #00ff88;
 }
 
 .feature-icon {
@@ -294,6 +321,12 @@ p, li, label, input, textarea {
     background: #1a1a1a;
     padding: 20px;
     border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    border: 1px solid #00ff88;
 }
 
 .stat-number {
@@ -380,6 +413,11 @@ p, li, label, input, textarea {
     border: 1px solid #2a2a2a;
     border-radius: 10px;
     overflow: hidden;
+    transition: all 0.3s;
+}
+
+.code-block:hover {
+    border-color: #00ff88;
 }
 
 .code-block h3 {
@@ -465,18 +503,55 @@ footer {
 
 /* Social links */
 .social-links {
-    text-align: center;
-    padding: 15px;
-    gap: 12px;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 99;
 }
 
 .social-links a {
-    color: #00ff88;
+    background: #1a1a1a;
+    border: 1px solid #00ff88;
+    border-right: none;
+    padding: 10px 12px;
     text-decoration: none;
-    font-size: 0.9rem;
+    color: #00ff88;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    transform: translateX(-5px);
+    background: #00ff88;
+    color: #000;
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00ff88;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00cc66;
+}
+
+/* Selection */
+::selection {
+    background: #00ff88;
+    color: #000;
 }
 
 /* ==================== RESPONSIVE MOBILE AVEC HAMBURGER ==================== */
@@ -660,13 +735,22 @@ footer {
     }
 
     .social-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+        transform: none;
     }
 
     .social-links a {
-        font-size: 0.85rem;
+        border: 1px solid #00ff88;
+        border-radius: 5px;
+        padding: 8px 12px;
+    }
+
+    .social-links a:hover {
+        transform: translateY(-2px);
     }
 }
 
@@ -695,7 +779,7 @@ footer {
     }
 }
 
-/* ==================== CORRECTION CVE ==================== */
+/* ==================== CORRECTION CVE & SECURITY ==================== */
 @media (max-width: 768px) {
     .cve-item,
     .cve-card,
@@ -703,7 +787,10 @@ footer {
     .vuln-item,
     .vulnerability-item,
     .security-card p,
-    .security-card li {
+    .security-card li,
+    .faq-item,
+    .faq-question,
+    .faq-answer {
         font-size: 0.95rem !important;
         line-height: 1.5;
         padding: 12px;
@@ -715,12 +802,20 @@ footer {
     .code-block code {
         font-size: 0.8rem !important;
     }
+    
+    table,
+    .scanner-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
 }
 
 @media (max-width: 480px) {
     .cve-item,
     .cve-card,
-    .vuln-item {
+    .vuln-item,
+    .faq-item {
         font-size: 0.9rem !important;
         padding: 10px;
     }
@@ -728,5 +823,27 @@ footer {
     pre,
     code {
         font-size: 0.7rem !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .nav, .social-links, .download-btn, .menu-toggle, .lang-switch {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .scanner-card, .feature-item, .stat-card, .legal-box {
+        border: 1px solid #ccc;
+        background: white;
+        color: black;
+    }
+    
+    h2::after {
+        background: black;
     }
 }

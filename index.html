@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SENTRAX - Suite de cybersécurité professionnelle avec 10 scanners réseau, API REST, dashboard web, et détection de vulnérabilités.">
-    <meta name="keywords" content="cybersécurité, scanner réseau, sécurité informatique, pentest, vulnérabilités, nmap, scan ports">
+    <meta name="description" content="SENTRAX - Suite de cybersécurité professionnelle avec 10 scanners réseau, API REST, dashboard web, authentification JWT + 2FA, et détection de vulnérabilités.">
+    <meta name="keywords" content="cybersécurité, scanner réseau, sécurité informatique, pentest, vulnérabilités, nmap, scan ports, JWT, 2FA, CVE">
     <meta name="author" content="Patrick Ndaye">
-    <title>SENTRAX - Cybersecurity Scanner</title>
+    <meta property="og:title" content="SENTRAX - Cybersecurity Scanner">
+    <meta property="og:description" content="Suite de cybersécurité professionnelle avec 10 scanners réseau">
+    <meta property="og:url" content="https://ndaye12.github.io/SentraX/">
+    <title>SENTRAX - Suite de cybersécurité professionnelle</title>
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -40,13 +43,16 @@
                 <span class="badge">🐍 Python 3.11+</span>
                 <span class="badge">📊 10 Scanners</span>
                 <span class="badge">🔐 API REST</span>
+                <span class="badge">🔑 JWT + 2FA</span>
+                <span class="badge">🖥️ Dashboard intégré</span>
             </div>
-            <a href="https://drive.google.com/file/d/1Dn01CZFKGJ6BHd5LoU9qTSFieCJYBlGz/view?usp=sharing" class="download-btn">
+            <a href="https://drive.google.com/file/d/1F0uLGA-FNCG0z2ptrQlsx9U5h7MVEQt4/view?usp=sharing" class="download-btn">
                 📥 TÉLÉCHARGER SENTRAX v3.1
             </a>
             <div class="download-info">
-                <span>Windows EXE (30.7 MB)</span>
+                <span>Windows EXE (30.8 MB)</span>
                 <span>🔒 Open Source - MIT</span>
+                <span>🔐 Identifiants: admin / Admin123!</span>
             </div>
         </div>
     </header>
@@ -59,47 +65,47 @@
                     <div class="scanner-card">
                         <div class="scanner-icon">🤖</div>
                         <h3>AI Predictive</h3>
-                        <p>Optimisation probabiliste du ciblage réseau</p>
+                        <p>Scan utilisant l'intelligence artificielle</p>
                     </div>
                     <div class="scanner-card">
                         <div class="scanner-icon">🌐</div>
                         <h3>OSINT</h3>
-                        <p>Shodan, Censys, DNS, GitHub</p>
+                        <p>Reconnaissance via Shodan, Censys, DNS, GitHub</p>
                     </div>
                     <div class="scanner-card">
                         <div class="scanner-icon">🤝</div>
                         <h3>P2P</h3>
-                        <p>Scan distribué simulé - Analyse multi-pays</p>
+                        <p>Scan distribué depuis plusieurs pays</p>
                     </div>
                     <div class="scanner-card">
                         <div class="scanner-icon">👻</div>
                         <h3>Passive</h3>
-                        <p>Reconnaissance passive sans émission active de paquets</p>
+                        <p>0 paquet envoyé, totalement indétectable</p>
                     </div>
                     <div class="scanner-card">
                         <div class="scanner-icon">⏰</div>
                         <h3>Time Machine</h3>
-                        <p>Analyse historique + prédictions</p>
+                        <p>Analyse historique et prédictions</p>
                     </div>
                     <div class="scanner-card">
                         <div class="scanner-icon">🕶️</div>
                         <h3>Holographic Radar</h3>
-                        <p>Visualisation 3D temps réel</p>
+                        <p>Visualisation 3D en temps réel</p>
                     </div>
                     <div class="scanner-card">
                         <div class="scanner-icon">👑</div>
                         <h3>Expert PRO</h3>
-                        <p>SYN scan + UDP + OS detection</p>
+                        <p>SYN scan + UDP + Détection OS</p>
                     </div>
                     <div class="scanner-card">
                         <div class="scanner-icon">🔥</div>
                         <h3>Ultra PRO</h3>
-                        <p>UDP avancé + ICMP + versions</p>
+                        <p>UDP avancé + ICMP + Détection versions</p>
                     </div>
                     <div class="scanner-card">
                         <div class="scanner-icon">🔌</div>
                         <h3>SNMP</h3>
-                        <p>Détection périphériques</p>
+                        <p>Détection de périphériques SNMP</p>
                     </div>
                     <div class="scanner-card">
                         <div class="scanner-icon">📡</div>
@@ -121,8 +127,13 @@
                     </div>
                     <div class="feature-item">
                         <span class="feature-icon">🔐</span>
-                        <h3>Analyse SSL/TLS</h3>
-                        <p>Certificats, expiration, émetteurs</p>
+                        <h3>Authentification JWT</h3>
+                        <p>Tokens sécurisés avec expiration 8h</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📱</span>
+                        <h3>Double authentification 2FA</h3>
+                        <p>TOTP avec Google Authenticator</p>
                     </div>
                     <div class="feature-item">
                         <span class="feature-icon">🛡️</span>
@@ -133,6 +144,16 @@
                         <span class="feature-icon">🎯</span>
                         <h3>Détection OS avancée</h3>
                         <p>15+ signatures (Windows, Linux, Mac, Cisco)</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🚫</span>
+                        <h3>Rate limiting</h3>
+                        <p>Protection anti-bruteforce (5 tentatives)</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🖥️</span>
+                        <h3>Dashboard 1 clic</h3>
+                        <p>Dans l'EXE : Help → Dashboard</p>
                     </div>
                 </div>
             </div>
@@ -147,7 +168,7 @@
                         <div class="stat-label">Scanners</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">30.7</div>
+                        <div class="stat-number">30.8</div>
                         <div class="stat-label">MB (EXE)</div>
                     </div>
                     <div class="stat-card">
@@ -157,6 +178,10 @@
                     <div class="stat-card">
                         <div class="stat-number">5</div>
                         <div class="stat-label">CVE intégrées</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">8h</div>
+                        <div class="stat-label">Expiration JWT</div>
                     </div>
                 </div>
             </div>
@@ -196,6 +221,34 @@
 
         <section class="section">
             <div class="container">
+                <h2>🔐 SÉCURITÉ DU COMPTE</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">🔑</span>
+                        <h3>Changer mot de passe</h3>
+                        <p>Mots de passe sécurisés (8+, maj, min, chiffre, spécial)</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📧</span>
+                        <h3>Réinitialisation</h3>
+                        <p>Lien valable 1 heure (affiché dans l'interface)</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">👥</span>
+                        <h3>Multi-utilisateurs</h3>
+                        <p>Création de comptes avec inscription</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📋</span>
+                        <h3>Logs sécurité</h3>
+                        <p>Traçabilité des connexions et actions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section dark">
+            <div class="container">
                 <h2>🚀 COMMANDES RAPIDES</h2>
                 <div class="code-blocks">
                     <div class="code-block">
@@ -212,9 +265,10 @@
                     </div>
                     <div class="code-block">
                         <h3>Scan rapide via API</h3>
-                        <pre><code>curl -X POST http://localhost:5000/api/quick-scan \
+                        <pre><code>curl -X POST http://localhost:5000/api/scan \
   -H "Content-Type: application/json" \
-  -d '{"target":"scanme.nmap.org"}'</code></pre>
+  -H "Authorization: Bearer VOTRE_TOKEN" \
+  -d '{"target":"scanme.nmap.org","scanner":"expert"}'</code></pre>
                     </div>
                 </div>
             </div>
@@ -262,13 +316,11 @@
     </div>
 
     <script>
-        // Menu hamburger
         function toggleMenu() {
             const menu = document.querySelector('.nav-menu');
-            menu.classList.toggle('active');
+            if (menu) menu.classList.toggle('active');
         }
 
-        // Animations au scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -276,6 +328,7 @@
                 }
             });
         });
+
         document.querySelectorAll('.scanner-card, .feature-item, .stat-card, .code-block').forEach(el => {
             el.classList.add('fade-in');
             observer.observe(el);

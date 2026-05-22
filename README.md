@@ -1,12 +1,14 @@
-# 🛡️ SENTRAX - cybersécurité professionnelle
+# 🛡️ SENTRAX - Suite de cybersécurité professionnelle
 
 **Version 3.1.0** | Licence MIT | Open Source
 
 [![Site Web](https://img.shields.io/badge/Web-SentraX-blue)](https://ndaye12.github.io/SentraX/)
 [![Version](https://img.shields.io/badge/version-3.1.0-green)]()
 [![License](https://img.shields.io/badge/license-MIT-blue)]()
+[![Python](https://img.shields.io/badge/Python-3.11%2B-blue.svg)](https://python.org)
+[![CI/CD](https://github.com/Ndaye12/SentraX/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Ndaye12/SentraX/actions)
 
-![SENTRAX Dashboard](https://github.com/Ndaye12/SentraX/blob/main/screenshots/banner.png)
+![SENTRAX Dashboard](screenshots/dashboard.png)
 *Dashboard web de SENTRAX*
 
 ---
@@ -17,31 +19,41 @@
 
 SENTRAX est une suite de cybersécurité complète intégrant :
 
-- 10 scanners réseau professionnels
-- API REST sécurisée (JWT, 2FA, rate limiting)
-- Dashboard web moderne (clair/sombre, graphiques, historique)
-- EXE autonome (30 Mo, sans installation)
+- ✅ **10 scanners réseau** professionnels
+- ✅ **API REST sécurisée** (JWT, 2FA, rate limiting)
+- ✅ **Dashboard web moderne** (clair/sombre, graphiques, historique)
+- ✅ **EXE autonome** (30 Mo, sans installation)
 
 ---
 
 ## ✨ Fonctionnalités principales
 
-✔ 10 scanners réseau (TCP, SYN, UDP, ICMP, SNMP, DNS…)  
-✔ API REST sécurisée (JWT + 2FA + rate limiting)  
-✔ Dashboard web moderne (thème clair/sombre, graphiques Chart.js)  
-✔ Export PDF / JSON / CSV / HTML  
-✔ Système de plugins extensible  
-✔ Scanner CVE (EternalBlue, BlueKeep, Heartbleed…)  
-✔ Analyse SSL/TLS  
-✔ Docker + CI/CD GitHub Actions  
-✔ EXE autonome (Windows)
+| Catégorie | Fonctionnalités |
+|-----------|-----------------|
+| **Scanners** | TCP, SYN, UDP, ICMP, SNMP, DNS, OSINT, Passif, Time Machine, CVE |
+| **Sécurité** | JWT, 2FA (TOTP), rate limiting (5 tentatives), logs d'audit |
+| **Interface** | Dashboard web (Chart.js), thème clair/sombre, historique |
+| **Export** | PDF, JSON, CSV, HTML |
+| **Extensible** | Système de plugins, Docker, CI/CD |
+
+---
+
+## 🔐 Identifiants par défaut
+
+| Champ | Valeur |
+|-------|--------|
+| **Nom d'utilisateur** | `admin` |
+| **Mot de passe** | `Admin123!` |
+
+⚠️ **Changez le mot de passe dès la première utilisation !**
 
 ---
 
 ## 📥 Téléchargement
 
-- **Windows EXE** : [Télécharger SENTRAX v3.1](https://drive.google.com/file/d/1Dn01CZFKGJ6BHd5LoU9qTSFieCJYBlGz/view?usp=sharing)
+- **Windows EXE** : [Télécharger SENTRAX v3.1](https://github.com/Ndaye12/SentraX/releases/download/v3.1.0/SENTRAX.exe)
 - **Site officiel** : [https://ndaye12.github.io/SentraX/](https://ndaye12.github.io/SentraX/)
+- **GitHub** : [https://github.com/Ndaye12/SentraX](https://github.com/Ndaye12/SentraX)
 
 ---
 
@@ -51,9 +63,10 @@ SENTRAX est une suite de cybersécurité complète intégrant :
 
 1. Télécharger `SENTRAX.exe`
 2. Double-clic pour lancer
-3. Accéder au dashboard : [http://localhost:5000](http://localhost:5000)
+3. Dans le menu → **Help → Dashboard** (le dashboard s'ouvre automatiquement)
+4. Accédez au dashboard : [http://localhost:5000/dashboard](http://localhost:5000/dashboard)
 
-### Via Python
+### Via Python (source)
 
 ```bash
 git clone https://github.com/Ndaye12/SentraX.git
@@ -68,37 +81,53 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 python web/api.py
-📊 Scanners inclus
+📊 Scanners inclus (10)
 Scanner	Description
-SYN scan	Scan TCP furtif
-UDP scan	Détection de services UDP
-OS detection	15+ signatures OS
-CVE scanner	EternalBlue, BlueKeep, Heartbleed…
-SSL/TLS	Certificats, expiration, émetteurs
-SNMP	Détection de périphériques réseau
-DNS	Énumération de sous-domaines
-OSINT	Shodan, Censys, GitHub
-Passive	Reconnaissance passive sans paquets actifs
-Time Machine	Analyse historique + prédictions
+🔍 SYN scan	Scan TCP furtif
+📡 UDP scan	Détection de services UDP
+🖥️ OS detection	15+ signatures OS
+🛡️ CVE scanner	EternalBlue, BlueKeep, Heartbleed…
+🔐 SSL/TLS	Certificats, expiration, émetteurs
+🔌 SNMP	Détection de périphériques réseau
+📡 DNS	Énumération de sous-domaines
+🌐 OSINT	Shodan, Censys, GitHub
+👻 Passive	Reconnaissance passive sans paquets actifs
+⏰ Time Machine	Analyse historique + prédictions
 🔒 Sécurité
-Authentification JWT
-
-2FA (double facteur)
-
-Rate limiting anti-bruteforce
-
-Journalisation complète
-
+Fonctionnalité	Description
+JWT	Tokens sécurisés avec expiration 8h
+2FA	Double authentification TOTP (Google Authenticator)
+Rate limiting	5 tentatives max, blocage 5 minutes
+Journalisation	Logs complets des connexions et actions
+Mots de passe	Hashés avec Werkzeug (bcrypt)
 📖 Documentation complète
-https://ndaye12.github.io/SentraX/docs.html
+Site officiel
 
-## 👤 Auteur
+Documentation
 
-**Patrick Ndaye**  
+API REST
 
-- **LinkedIn** : [patrick-ndaye-b5b67a399](https://www.linkedin.com/in/patrick-ndaye-b5b67a399)  
-- **GitHub** : [Ndaye12](https://github.com/Ndaye12)  
-- **WhatsApp** : [Me contacter](https://wa.me/243975659129?text=Bonjour%20Patrick%2C%20je%20suis%20intéressé%20par%20SENTRAX)
+Sécurité
+
+🐳 Docker
+bash
+docker build -t sentrax:3.1.0 .
+docker run -p 5000:5000 sentrax:3.1.0
+📸 Captures d'écran
+Dashboard	Scanners	Sécurité
+https://screenshots/dashboard.png	https://screenshots/scanners.png	https://screenshots/security.png
+👤 Auteur
+Patrick Ndaye - Développeur cybersécurité
+
+🔗 LinkedIn
+
+🐙 GitHub
+
+💬 WhatsApp
+
+📧 patrickndaye919@gmail.com
 
 📜 Licence
-MIT License – voir le fichier LICENSE.
+MIT License – Open Source
+
+© 2026 Patrick Ndaye - SENTRAX | Designed for cybersecurity professionals

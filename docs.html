@@ -3,40 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Documentation SENTRAX - Comment utiliser les scanners réseau">
-    <meta name="keywords" content="sentrax, documentation, scanner, cybersécurité, tutoriel">
+    <meta name="description" content="Documentation complète de SENTRAX - Installation, utilisation, API REST, FAQ, et tutoriels pour les 10 scanners réseau.">
+    <meta name="keywords" content="sentrax, documentation, scanner réseau, tutoriel, API, installation, cybersécurité">
+    <meta name="author" content="Patrick Ndaye">
     <title>SENTRAX - Documentation</title>
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        body { font-family: 'Courier New', monospace; background: #0a0a0a; color: #00ff88; margin: 0; padding: 20px; }
-        .container { max-width: 1000px; margin: 0 auto; }
-        h1, h2 { color: #00ff88; border-bottom: 1px solid #00ff88; padding-bottom: 10px; }
-        a { color: #00ff88; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .nav { text-align: center; margin: 20px 0; padding: 10px; background: #1a1a1a; border-radius: 5px; }
-        .nav a { margin: 0 15px; }
+        body { font-family: 'Segoe UI', monospace; background: #0a0a0a; color: #e0e0e0; margin: 0; padding: 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        h1, h2, h3 { color: #00ff88; }
+        h1 { border-bottom: 2px solid #00ff88; padding-bottom: 10px; margin-bottom: 30px; }
+        h2 { border-left: 4px solid #00ff88; padding-left: 15px; margin: 30px 0 20px; }
+        a { color: #00ff88; text-decoration: none; transition: color 0.3s; }
+        a:hover { text-decoration: underline; color: #ffffff; }
+        .nav { text-align: center; margin: 20px 0; padding: 15px; background: #1a1a1a; border-radius: 10px; border: 1px solid #00ff88; }
+        .nav a { margin: 0 15px; font-weight: bold; }
+        .step { background: #1a1a1a; padding: 20px; margin: 20px 0; border-left: 4px solid #00ff88; border-radius: 8px; transition: transform 0.3s; }
+        .step:hover { transform: translateX(5px); }
+        .code { background: #0a0a0a; padding: 15px; border-radius: 8px; font-family: monospace; border: 1px solid #00ff88; overflow-x: auto; font-size: 0.9rem; }
         .screenshot { background: #1a1a1a; padding: 20px; margin: 20px 0; border-radius: 10px; text-align: center; border: 1px solid #00ff88; }
-        .screenshot img { max-width: 100%; border-radius: 5px; }
-        .step { background: #1a1a1a; padding: 15px; margin: 15px 0; border-left: 3px solid #00ff88; }
-        .code { background: #0a0a0a; padding: 10px; font-family: monospace; border: 1px solid #333; overflow-x: auto; }
+        .screenshot p { color: #888; margin-bottom: 10px; }
+        .faq-item { background: #1a1a1a; margin: 15px 0; border-radius: 8px; overflow: hidden; }
+        .faq-question { padding: 15px 20px; background: #1a1a1a; cursor: pointer; font-weight: bold; border-left: 4px solid #00ff88; transition: background 0.3s; }
+        .faq-question:hover { background: #222; }
+        .faq-question::before { content: "▶ "; color: #00ff88; }
+        .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: #0a0a0a; }
+        .faq-answer.active { padding: 15px 20px; max-height: 300px; }
+        .badge { display: inline-block; background: #00ff88; color: #000; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; margin-left: 8px; }
         footer { text-align: center; margin-top: 40px; padding: 20px; color: #666; border-top: 1px solid #333; }
+        @media (max-width: 768px) { .nav a { display: inline-block; margin: 5px 10px; } }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><span class="logo-icon">🛡️</span><span class="logo-text">SENTRAX</span></div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="features.html">Fonctionnalités</a></li>
+                <li><a href="docs.html" class="active">Documentation</a></li>
+                <li><a href="security.html">Sécurité</a></li>
+                <li><a href="https://github.com/Ndaye12/SentraX">GitHub</a></li>
+            </ul>
+            <div class="lang-switch">
+                <a href="docs.html" class="lang-active">FR</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <h1>📖 Documentation SENTRAX</h1>
         
         <div class="nav">
-            <a href="index.html">🏠 Accueil</a>
-            <a href="docs.html">📖 Documentation</a>
-            <a href="https://github.com/Ndaye12/SentraX">💻 GitHub</a>
+            <a href="#installation">📥 Installation</a>
+            <a href="#utilisation">🎯 Utilisation</a>
+            <a href="#dashboard">📊 Dashboard</a>
+            <a href="#api">🔐 API REST</a>
+            <a href="#faq">❓ FAQ</a>
         </div>
 
-        <h2>🎯 Installation</h2>
+        <h2 id="installation">📥 Installation</h2>
         <div class="step">
             <strong>1. Télécharger SENTRAX</strong>
-            <p>Téléchargez la dernière version depuis la page d'accueil.</p>
+            <p>Téléchargez la dernière version depuis la <a href="https://github.com/Ndaye12/SentraX/releases">page GitHub Releases</a> ou depuis le site officiel.</p>
         </div>
         <div class="step">
             <strong>2. Extraire le ZIP</strong>
@@ -44,40 +75,42 @@
         </div>
         <div class="step">
             <strong>3. Lancer l'application</strong>
+            <p>Double-cliquez sur <code>SENTRAX.exe</code> (Windows) ou exécutez <code>python launcher.py</code> (Linux/Mac).</p>
+        </div>
+        <div class="step">
+            <strong>4. Installer les dépendances (version source)</strong>
+            <div class="code">pip install -r requirements.txt</div>
+        </div>
+
+        <h2 id="utilisation">🎯 Utilisation</h2>
+        <div class="step">
+            <strong>1. Lancer l'application</strong>
             <p>Double-cliquez sur <code>SENTRAX.exe</code>.</p>
         </div>
-
-        <div class="screenshot">
-            <p>📸 <strong>Fenêtre principale</strong> - Les 10 scanners disponibles</p>
-            <img src="screenshots/main.png" alt="Fenêtre principale SENTRAX" style="max-width:100%; border-radius:10px;">
-        </div>
-
-        <h2>🔧 Utilisation</h2>
         <div class="step">
-            <strong>1. Choisir un scanner</strong>
+            <strong>2. Choisir un scanner</strong>
             <p>Sélectionnez l'un des 10 scanners dans le menu principal.</p>
         </div>
         <div class="step">
-            <strong>2. Entrer la cible</strong>
+            <strong>3. Entrer la cible</strong>
             <p>Saisissez une IP (ex: <code>192.168.1.1</code>) ou un domaine (ex: <code>scanme.nmap.org</code>).</p>
         </div>
         <div class="step">
-            <strong>3. Lancer le scan</strong>
-            <p>Cliquez sur "LANCER" et patientez.</p>
+            <strong>4. Lancer le scan</strong>
+            <p>Cliquez sur "LAUNCHER" et patientez.</p>
         </div>
         <div class="step">
-            <strong>4. Analyser les résultats</strong>
-            <p>Les ports ouverts s'affichent avec leurs services.</p>
+            <strong>5. Accéder au Dashboard web</strong>
+            <p>Dans le menu <code>Help → Dashboard</code>. L'API se lance automatiquement et le dashboard s'ouvre dans votre navigateur. <span class="badge">Nouveau !</span></p>
         </div>
-
-        <div class="screenshot">
-            <p>📸 <strong>Résultat de scan</strong> - Ports détectés</p>
-            <img src="screenshots/scan_result.png" alt="Résultat de scan" style="max-width:100%; border-radius:10px;">
-        </div>
-
-        <h2>📊 Dashboard Web</h2>
         <div class="step">
-            <strong>1. Lancer l'API</strong>
+            <strong>6. Analyser les résultats</strong>
+            <p>Les ports ouverts s'affichent avec leurs services détectés.</p>
+        </div>
+
+        <h2 id="dashboard">📊 Dashboard Web</h2>
+        <div class="step">
+            <strong>1. Lancer l'API (alternative)</strong>
             <div class="code">python web/api.py</div>
         </div>
         <div class="step">
@@ -86,46 +119,126 @@
         </div>
         <div class="step">
             <strong>3. Se connecter</strong>
-            <p>Identifiants : <code>admin / admin123</code></p>
+            <p>Identifiants par défaut : <code>admin</code> / <code>Admin123!</code></p>
+        </div>
+        <div class="step">
+            <strong>4. Utiliser le dashboard</strong>
+            <p>Choisissez un scanner, entrez une cible, visualisez les résultats et l'historique.</p>
         </div>
 
         <div class="screenshot">
-            <p>📸 <strong>Dashboard web</strong> - Interface moderne</p>
+            <p>📸 <strong>Dashboard web</strong> - Interface moderne avec graphiques</p>
             <img src="screenshots/dashboard.png" alt="Dashboard SENTRAX" style="max-width:100%; border-radius:10px;">
         </div>
 
-        <h2>🔐 API REST</h2>
-        <div class="code">
-            # Lancer un scan rapide<br>
-            curl -X POST http://localhost:5000/api/quick-scan \<br>
-            &nbsp;&nbsp;-H "Content-Type: application/json" \<br>
-            &nbsp;&nbsp;-d '{"target":"scanme.nmap.org"}'
+        <h2 id="api">🔐 API REST</h2>
+        <div class="step">
+            <strong>Authentification</strong>
+            <div class="code">
+                # Obtenir un token JWT<br>
+                curl -X POST http://localhost:5000/api/login \<br>
+                &nbsp;&nbsp;-H "Content-Type: application/json" \<br>
+                &nbsp;&nbsp;-d '{"username":"admin","password":"Admin123!"}'
+            </div>
+        </div>
+        <div class="step">
+            <strong>Lancer un scan</strong>
+            <div class="code">
+                curl -X POST http://localhost:5000/api/scan \<br>
+                &nbsp;&nbsp;-H "Content-Type: application/json" \<br>
+                &nbsp;&nbsp;-H "Authorization: Bearer VOTRE_TOKEN" \<br>
+                &nbsp;&nbsp;-d '{"target":"scanme.nmap.org","scanner":"expert"}'
+            </div>
+        </div>
+        <div class="step">
+            <strong>Récupérer les résultats</strong>
+            <div class="code">
+                curl -X GET http://localhost:5000/api/scan/SCAN_ID \<br>
+                &nbsp;&nbsp;-H "Authorization: Bearer VOTRE_TOKEN"
+            </div>
+        </div>
+        <div class="step">
+            <strong>Exporter en PDF</strong>
+            <div class="code">
+                curl -X GET http://localhost:5000/api/export/pdf/SCAN_ID \<br>
+                &nbsp;&nbsp;-H "Authorization: Bearer VOTRE_TOKEN" \<br>
+                &nbsp;&nbsp;--output rapport.pdf
+            </div>
         </div>
 
-        <h2>❓ FAQ</h2>
-        <div class="step">
-            <strong>Quels sont les scanners disponibles ?</strong>
-            <p>10 scanners : AI, OSINT, P2P, Passif, Time Machine, Holo Radar, Expert PRO, Ultra PRO, SNMP, DNS.</p>
+        <h2 id="faq">❓ FAQ</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">Quels systèmes d'exploitation sont supportés ?</div>
+            <div class="faq-answer">Windows 10/11, Linux (Ubuntu, Debian, Kali), macOS. L'EXE est pour Windows uniquement, la version source fonctionne sur tous les OS.</div>
         </div>
-        <div class="step">
-            <strong>Est-ce que c'est gratuit ?</strong>
-            <p>Oui, SENTRAX est open source (licence MIT).</p>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">Est-ce que c'est gratuit ?</div>
+            <div class="faq-answer">Oui, SENTRAX est totalement gratuit et open source sous licence MIT. Aucune limite, aucune fonctionnalité payante.</div>
         </div>
-        <div class="step">
-            <strong>Comment signaler un bug ?</strong>
-            <p>Envoyez un email à patrickndaye919@gmail.com ou ouvrez une issue sur GitHub.</p>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">Comment changer le mot de passe par défaut ?</div>
+            <div class="faq-answer">Connectez-vous au dashboard (admin/Admin123!), allez dans l'onglet "Sécurité" → "Changer mot de passe".</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">Comment activer la double authentification (2FA) ?</div>
+            <div class="faq-answer">Dans l'onglet "Sécurité" → "Activer 2FA", scannez le QR code avec Google Authenticator.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">Comment signaler un bug ?</div>
+            <div class="faq-answer">Envoyez un email à <a href="mailto:patrickndaye919@gmail.com">patrickndaye919@gmail.com</a> ou ouvrez une issue sur <a href="https://github.com/Ndaye12/SentraX/issues">GitHub</a>.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">Puis-je utiliser SENTRAX pour scanner des serveurs externes ?</div>
+            <div class="faq-answer">Oui, mais uniquement sur des cibles autorisées. Le scanner sans autorisation est strictement interdit.</div>
         </div>
 
         <h2>🛡️ Exemples de cibles autorisées</h2>
         <ul>
-            <li><code>scanme.nmap.org</code> - Serveur de test officiel (recommandé)</li>
-            <li><code>google.com</code> - Site public</li>
+            <li><code>scanme.nmap.org</code> - Serveur de test officiel Nmap (recommandé pour les tests)</li>
+            <li><code>google.com</code> - Site public (scan limité)</li>
             <li><code>127.0.0.1</code> - Votre propre machine</li>
+            <li><code>localhost</code> - Votre propre machine</li>
         </ul>
 
         <footer>
-            © 2026 Patrick Ndaye - SENTRAX | Open Source (MIT)
+            © 2026 Patrick Ndaye - SENTRAX | Open Source (MIT) | Version 3.1.0
         </footer>
     </div>
+
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/patrick-ndaye-b5b67a399" target="_blank">🔗 LinkedIn</a>
+        <a href="https://github.com/Ndaye12" target="_blank">🐙 GitHub</a>
+        <a href="https://wa.me/243975659129?text=Bonjour%20Patrick%2C%20je%20suis%20intéressé%20par%20SENTRAX" target="_blank">💬 WhatsApp</a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.nav-menu');
+            if (menu) menu.classList.toggle('active');
+        }
+
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            answer.classList.toggle('active');
+            const currentText = element.innerHTML;
+            if (answer.classList.contains('active')) {
+                element.innerHTML = element.innerHTML.replace('▶ ', '▼ ');
+            } else {
+                element.innerHTML = element.innerHTML.replace('▼ ', '▶ ');
+            }
+        }
+
+        document.querySelectorAll('.faq-question').forEach(q => {
+            if (!q.innerHTML.includes('▶') && !q.innerHTML.includes('▼')) {
+                q.innerHTML = '▶ ' + q.innerHTML;
+            }
+        });
+    </script>
 </body>
 </html>
