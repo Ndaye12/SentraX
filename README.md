@@ -6,7 +6,8 @@
 [![Version](https://img.shields.io/badge/version-3.1.0-green)]()
 [![License](https://img.shields.io/badge/license-MIT-blue)]()
 [![Python](https://img.shields.io/badge/Python-3.11%2B-blue.svg)](https://python.org)
-[![CI/CD](https://github.com/Ndaye12/SentraX/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Ndaye12/SentraX/actions)
+[![Downloads](https://img.shields.io/sourceforge/dt/sentrax.svg)](https://sourceforge.net/projects/sentrax/files/latest/download)
+[![SourceForge](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/sentrax/)
 
 ![SENTRAX Dashboard](screenshots/dashboard.png)
 *Dashboard web de SENTRAX*
@@ -22,7 +23,7 @@ SENTRAX est une suite de cybersécurité complète intégrant :
 - ✅ **10 scanners réseau** professionnels
 - ✅ **API REST sécurisée** (JWT, 2FA, rate limiting)
 - ✅ **Dashboard web moderne** (clair/sombre, graphiques, historique)
-- ✅ **EXE autonome** (30 Mo, sans installation)
+- ✅ **EXE autonome** (33 Mo, sans installation)
 
 ---
 
@@ -52,6 +53,7 @@ SENTRAX est une suite de cybersécurité complète intégrant :
 ## 📥 Téléchargement
 
 - **Windows EXE** : [Télécharger SENTRAX v3.1](https://github.com/Ndaye12/SentraX/releases/download/v3.1.0/SENTRAX.exe)
+- **SourceForge** : [Télécharger depuis SourceForge](https://sourceforge.net/projects/sentrax/files/latest/download)
 - **Site officiel** : [https://ndaye12.github.io/SentraX/](https://ndaye12.github.io/SentraX/)
 - **GitHub** : [https://github.com/Ndaye12/SentraX](https://github.com/Ndaye12/SentraX)
 
@@ -81,6 +83,10 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 python web/api.py
+🐳 Docker
+bash
+docker build -t sentrax:3.1.0 .
+docker run -p 5000:5000 sentrax:3.1.0
 📊 Scanners inclus (10)
 Scanner	Description
 🔍 SYN scan	Scan TCP furtif
@@ -109,13 +115,6 @@ API REST
 
 Sécurité
 
-🐳 Docker
-bash
-docker build -t sentrax:3.1.0 .
-docker run -p 5000:5000 sentrax:3.1.0
-📸 Captures d'écran
-Dashboard	Scanners	Sécurité
-https://screenshots/dashboard.png	https://screenshots/scanners.png	https://screenshots/security.png
 👤 Auteur
 Patrick Ndaye - Développeur cybersécurité
 
