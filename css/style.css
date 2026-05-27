@@ -752,6 +752,21 @@ footer {
     .social-links a:hover {
         transform: translateY(-2px);
     }
+
+    /* Ajustement du widget Product Hunt sur mobile */
+    .badges-section > div {
+        max-width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .badges-section h3 {
+        white-space: normal !important;
+        word-break: break-word !important;
+        font-size: 16px !important;
+    }
+    .badges-section p {
+        font-size: 12px !important;
+    }
 }
 
 /* Très petits écrans */
