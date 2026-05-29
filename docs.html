@@ -60,6 +60,7 @@
         
         <div class="nav">
             <a href="#installation">📥 Installation</a>
+            <a href="#docker">🐳 Docker</a>
             <a href="#utilisation">🎯 Utilisation</a>
             <a href="#dashboard">📊 Dashboard</a>
             <a href="#api">🔐 API REST</a>
@@ -82,6 +83,24 @@
         <div class="step">
             <strong>4. Installer les dépendances (version source)</strong>
             <div class="code">pip install -r requirements.txt</div>
+        </div>
+
+        <h2 id="docker">🐳 Docker (Linux / macOS / Windows)</h2>
+        <div class="step">
+            <strong>1. Pull l'image Docker</strong>
+            <div class="code">docker pull patrickndaye919/sentrax:latest</div>
+        </div>
+        <div class="step">
+            <strong>2. Lancer le conteneur</strong>
+            <div class="code">docker run -p 5000:5000 patrickndaye919/sentrax:latest</div>
+        </div>
+        <div class="step">
+            <strong>3. Accéder au dashboard</strong>
+            <p>Ouvrez <code>http://localhost:5000/dashboard</code> dans votre navigateur.</p>
+        </div>
+        <div class="step">
+            <strong>🔗 Image sur Docker Hub</strong>
+            <p><a href="https://hub.docker.com/r/patrickndaye919/sentrax" target="_blank">https://hub.docker.com/r/patrickndaye919/sentrax</a></p>
         </div>
 
         <h2 id="utilisation">🎯 Utilisation</h2>
