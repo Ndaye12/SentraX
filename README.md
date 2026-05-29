@@ -8,6 +8,7 @@
 [![Python](https://img.shields.io/badge/Python-3.11%2B-blue.svg)](https://python.org)
 [![Downloads](https://img.shields.io/sourceforge/dt/sentrax.svg)](https://sourceforge.net/projects/sentrax/files/latest/download)
 [![SourceForge](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/sentrax/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/patrickndaye919/sentrax)](https://hub.docker.com/r/patrickndaye919/sentrax)
 
 ![SENTRAX Dashboard](screenshots/dashboard.png)
 *Dashboard web de SENTRAX*
@@ -85,8 +86,10 @@ pip install -r requirements.txt
 python web/api.py
 🐳 Docker
 bash
-docker build -t sentrax:3.1.0 .
-docker run -p 5000:5000 sentrax:3.1.0
+docker pull patrickndaye919/sentrax:latest
+docker run -p 5000:5000 patrickndaye919/sentrax:latest
+Ouvrez http://localhost:5000/dashboard
+
 📊 Scanners inclus (10)
 Scanner	Description
 🔍 SYN scan	Scan TCP furtif
