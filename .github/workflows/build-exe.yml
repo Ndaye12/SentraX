@@ -1,0 +1,52 @@
+name: Build Windows EXE
+
+on:
+  push:
+    tags:
+      - 'v*'  # Déclenché quand tu pousses un tag comme v3.1.1, v3.2.0, etc.
+  workflow_dispatch:  # Permet de lancer manuellement depuis l'onglet Actions
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Build EXE with PyInstaller
+        run: |
+          pyinstaller --onefile --name SENTRAX --icon=assets/icons/shield.ico launcher.py
+
+      - name: Upload EXE as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SENTRAX-windows-exe
+          path: dist/SENTRAX.exe
+
+      - name: Compute SHA256
+        id: sha256
+        run: |
+          $hash = Get-FileHash -Algorithm SHA256 dist/SENTRAX.exe
+          echo "hash=$($hash.Hash)" >> $env:GITHUB_OUTPUT
+
+      - name: Create Release and Upload EXE
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: dist/SENTRAX.exe
+          body_path: release-notes.md  # Optionnel : fichier de notes
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
