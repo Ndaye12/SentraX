@@ -9,6 +9,7 @@
 [![Downloads](https://img.shields.io/sourceforge/dt/sentrax.svg)](https://sourceforge.net/projects/sentrax/files/latest/download)
 [![SourceForge](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/sentrax/)
 [![Feedback Welcome](https://img.shields.io/badge/Feedback-Welcome-brightgreen)](https://github.com/Ndaye12/SentraX/discussions)
+[![GitHub all releases](https://img.shields.io/github/downloads/Ndaye12/SentraX/total)](https://github.com/Ndaye12/SentraX/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/patrickndaye919/sentrax)](https://hub.docker.com/r/patrickndaye919/sentrax)
 [![Démonstration SENTRAX](screenshots/sentrax-demo-thumbnail.png)](screenshots/sentrax-demo.mp4)
 ![SENTRAX Dashboard](screenshots/dashboard.png)
