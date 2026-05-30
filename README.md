@@ -12,6 +12,7 @@
 [![GitHub all releases](https://img.shields.io/github/downloads/Ndaye12/SentraX/total)](https://github.com/Ndaye12/SentraX/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/patrickndaye919/sentrax)](https://hub.docker.com/r/patrickndaye919/sentrax)
 [![Démonstration SENTRAX](screenshots/sentrax-demo-thumbnail.png)](screenshots/sentrax-demo.mp4)
+[![SENTRAX Demo](https://img.youtube.com/vi/v5wyVZZEfec/0.jpg)](https://youtu.be/v5wyVZZEfec)
 ![SENTRAX Dashboard](screenshots/dashboard.png)
 *Dashboard web de SENTRAX*
 
