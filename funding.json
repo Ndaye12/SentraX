@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "name": "SENTRAX",
+  "description": "Open‑source cybersecurity suite for network scanning, CVE detection, and OSINT.",
+  "maintainer": "Patrick Ndaye",
+  "website": "https://ndaye12.github.io/SentraX/",
+  "sourceCode": "https://github.com/Ndaye12/SentraX",
+  "license": "MIT",
+  "funding": {
+    "goal": 10000,
+    "currency": "USD",
+    "description": "Funding will be used for plugin development, internationalisation, documentation, and community outreach."
+  },
+  "contact": {
+    "email": "patrickndaye919@gmail.com"
+  }
+}
