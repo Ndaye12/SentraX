@@ -1,17 +1,56 @@
 {
-  "version": "1.0.0",
-  "name": "SENTRAX",
-  "description": "Open‑source cybersecurity suite for network scanning, CVE detection, and OSINT.",
-  "maintainer": "Patrick Ndaye",
-  "website": "https://ndaye12.github.io/SentraX/",
-  "sourceCode": "https://github.com/Ndaye12/SentraX",
-  "license": "MIT",
-  "funding": {
-    "goal": 10000,
-    "currency": "USD",
-    "description": "Funding will be used for plugin development, internationalisation, documentation, and community outreach."
+  "$schema": "https://fundingjson.org/schema/v1.1.0.json",
+  "version": "v1.1.0",
+  "entity": {
+    "type": "individual",
+    "role": "maintainer",
+    "name": "Patrick Ndaye",
+    "email": "patrickndaye919@gmail.com",
+    "phone": "",
+    "description": "I'm a cybersecurity enthusiast and developer from Kinshasa, DRC. I created SENTRAX to provide a free, open‑source suite for network scanning, CVE detection, and OSINT.",
+    "webpageUrl": {
+      "url": "https://ndaye12.github.io/SentraX/"
+    }
   },
-  "contact": {
-    "email": "patrickndaye919@gmail.com"
+  "projects": [
+    {
+      "guid": "sentrax",
+      "name": "SENTRAX",
+      "description": "Open‑source cybersecurity suite for network scanning, CVE detection, and OSINT. Includes 10 scanners, a REST API with JWT + 2FA, and a modern web dashboard.",
+      "webpageUrl": {
+        "url": "https://ndaye12.github.io/SentraX/"
+      },
+      "repositoryUrl": {
+        "url": "https://github.com/Ndaye12/SentraX"
+      },
+      "licenses": ["spdx:MIT"],
+      "tags": ["cybersecurity", "network-scanner", "vulnerability-detection", "osint", "open-source"]
+    }
+  ],
+  "funding": {
+    "channels": [
+      {
+        "guid": "liberapay",
+        "type": "payment-provider",
+        "address": "https://liberapay.com/sentrax"
+      },
+      {
+        "guid": "github-sponsors",
+        "type": "payment-provider",
+        "address": "https://github.com/sponsors/Ndaye12"
+      }
+    ],
+    "plans": [
+      {
+        "guid": "general-support",
+        "status": "active",
+        "name": "General development support",
+        "description": "Support ongoing development, documentation, and community outreach.",
+        "amount": 0,
+        "currency": "USD",
+        "frequency": "monthly",
+        "channels": ["liberapay", "github-sponsors"]
+      }
+    ]
   }
 }
